@@ -13,7 +13,7 @@
       } else if (randomNumber<=5) {
         return "paper";
       } else {
-        return "scissors"
+        return "scissors";
       }
     }
 
@@ -22,10 +22,44 @@
         return choice;
     }
     
+    function playRound(humanChoice, computerChoice) {
+      humanChoice = humanChoice.toLowerCase();
+      
+      if (humanChoice==="rock") {
+        if (computerChoice==="rock") {
+          console.log(`It's a tie! "${humanChoice}" doesn't beat another "${computerChoice}".`);
+        } else if (computerChoice === "paper") {
+          console.log(`You lose! "${computerChoice}" beats "${humanChoice}".`);
+        } else {
+          console.log(`You win! "${humanChoice}" beats "${computerChoice}".`);
+        }
+      } else if (humanChoice==="paper") {
+        if (computerChoice==="rock") {
+          console.log(`You win! "${humanChoice}" beats "${computerChoice}".`);
+        } else if (computerChoice==="paper") {
+          console.log(`It's a tie! "${humanChoice}" doesn't beat another "${computerChoice}".`);
+        } else {
+          console.log(`You lose! "${computerChoice}" beats "${humanChoice}".`);
+        }
+      } else {
+        if (computerChoice==="rock") {
+          console.log(`You lose! "${computerChoice}" beats "${humanChoice}".`);
+        } else if (computerChoice==="paper") {
+          console.log(`You win! "${humanChoice}" beats "${computerChoice}".`);
+        } else {
+          console.log(`It's a tie! "${humanChoice}" doesn't beat another "${computerChoice}".`);
+        }
+      }
+    }
+
     let humanScore = 0;
     let computerScore = 0;
 
-    
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    playRound(humanChoice,computerChoice);
+
   </script>
 </body>
 </html>
