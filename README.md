@@ -1,1 +1,1 @@
-It's just training for learning js
+It's just training for learning js.
